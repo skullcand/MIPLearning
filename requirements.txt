@@ -1,5 +1,7 @@
-tensorflow-cpu
-numpy==1.26.4
+#tensorflow-cpu
+tensorflow==2.13.0
+#numpy==1.26.4
+numpy>=1.22
 pillow>=8.0.0
 scipy>=1.7.0
 scikit-image>=0.18.0
