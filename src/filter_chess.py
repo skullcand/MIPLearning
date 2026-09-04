@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.fft import fft2, fftshift, ifft2, ifftshift  # ← 这里补上了 ifftshift
+from scipy.fft import fft2, fftshift, ifft2, ifftshift  
 
-# ========== 1. 生成棋盘格图片 ==========
+========== 1. 生成棋盘格图片 ==========
 grid_size = 8          # 8x8 棋盘格
 pixel_per_cell = 32    # 每个格子 32x32 像素
 img_size = grid_size * pixel_per_cell  # 256x256
@@ -21,6 +21,8 @@ plt.title('Original Chessboard (Time Domain)')
 plt.axis('off')
 plt.show()
 
+# image_path = 'result\eg1.jpg'
+# chessboard = plt.imread(image_path)
 
 # ========== 2. 傅里叶变换 + 频谱可视化 ==========
 f_transform = fft2(chessboard)          # 二维傅里叶变换

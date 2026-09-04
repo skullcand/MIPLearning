@@ -83,7 +83,7 @@ def batch_predict(folder_path, model):
 def main():
     """主函数"""
     # 检查模型是否存在
-    model_path = 'mnist_model.h5'
+    model_path = 'result\mnist_model.h5'
     if not os.path.exists(model_path):
         print("❌ 模型文件不存在，请先运行 train.py 训练模型")
         sys.exit(1)

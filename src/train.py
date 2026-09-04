@@ -106,7 +106,7 @@ def train_model():
     print(f"   📊 测试集准确率: {test_acc:.4f} ({test_acc*100:.2f}%)")
     
     # 6. 保存模型
-    model_path = 'mnist_model.h5'
+    model_path = 'result\mnist_model.h5'
     model.save(model_path)
     print(f"💾 模型已保存到: {model_path}")
     print("=" * 50)

@@ -267,7 +267,7 @@ def extract_digit_robust(binary_img, region, target_size=(28, 28)):
     
     return canvas
 
-def debug_visualize(image_path, binary_img, regions, output_path='debug_split.png'):
+def debug_visualize(image_path, binary_img, regions, output_path='result\debug_split.png'):
     """
     可视化分割过程，用于调试
     """
@@ -314,14 +314,14 @@ def debug_visualize(image_path, binary_img, regions, output_path='debug_split.pn
 # 预测引擎
 # ============================================
 
-def predict_sequence_fixed(image_path, model_path='mnist_model.h5', 
+def predict_sequence_fixed(image_path, model_path='result\mnist_model.h5', 
                            visualize=False, debug=False):
     """
     修复版数字序列识别
     """
     # 1. 加载模型
     if not os.path.exists(model_path):
-        alternatives = ['mnist_cnn_model.h5', 'mnist_model.h5']
+        alternatives = ['result\mnist_cnn_model.h5', 'result\mnist_model.h5']
         for alt in alternatives:
             if os.path.exists(alt):
                 model_path = alt
@@ -469,7 +469,7 @@ def predict_sequence_fixed(image_path, model_path='mnist_model.h5',
 def main():
     parser = argparse.ArgumentParser(description='手写数字序列识别 - 修复版')
     parser.add_argument('image_path', help='图片文件路径')
-    parser.add_argument('--model', default='mnist_model.h5', help='模型文件路径')
+    parser.add_argument('--model', default='result\mnist_model.h5', help='模型文件路径')
     parser.add_argument('--visualize', action='store_true', help='显示结果')
     parser.add_argument('--debug', action='store_true', help='显示调试信息')
     

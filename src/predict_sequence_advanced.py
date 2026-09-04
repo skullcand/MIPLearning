@@ -129,7 +129,7 @@ def extract_digit(img_array, region, target_size=(28, 28)):
     
     return canvas
 
-def predict_sequence_advanced(image_path, model_path='mnist_model.h5'):
+def predict_sequence_advanced(image_path, model_path='result\mnist_model.h5'):
     """
     识别一串手写数字（高级版）
     """
@@ -182,7 +182,7 @@ def predict_sequence_advanced(image_path, model_path='mnist_model.h5'):
     
     return result, details
 
-def visualize_regions(image_path, regions, output_path='segmented.png'):
+def visualize_regions(image_path, regions, output_path='result\segmented.png'):
     """
     可视化分割结果（需要matplotlib）
     """

@@ -10,10 +10,14 @@ plt.rcParams['axes.unicode_minus'] = False
 # 信号 = 低频波(2Hz) + 高频波(10Hz)
 fs = 50              # 采样频率：每秒采50个点
 t = np.linspace(0, 2, 100)  # 时间：0到2秒，共100个点
+ampli1 = 10 # 振幅 3
+freq1 = 5 #频率 3
+ampli2 = 2 #振幅 1.5 
+freq2 = 1 #频率 10
 
 # 构造信号：两个正弦波叠加
-signal = 3 * np.sin(2 * np.pi * 2 * t) + 1.5 * np.sin(2 * np.pi * 10 * t)
-#         振幅3   频率2Hz          振幅1.5  频率10Hz
+signal = ampli1 * np.sin(2 * np.pi * freq1 * t) + ampli2 * np.sin(2 * np.pi * freq2 * t)
+#          频率2Hz          振幅1.5  频率10Hz
 
 # ============ 第2步：傅里叶变换 ============
 fft_result = fft(signal)           # 做FFT
@@ -32,17 +36,17 @@ fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 7))
 ax1.plot(t, signal, 'b-', linewidth=2)
 ax1.set_xlabel('Time (秒)')
 ax1.set_ylabel('amplitude')
-ax1.set_title('origin signal：2Hz + 10Hz ')
+ax1.set_title(f'origin signal：{freq1}Hz + {freq2}Hz')
 ax1.grid(True, alpha=0.3)
 
 # 在图上标注频率成分
-ax1.text(0.5, 3.5, '2Hz  (amplitude3)', color='red', fontsize=11)
-ax1.text(0.5, -3, '10Hz  (amplitude1.5)', color='green', fontsize=11)
+ax1.text(0.5, 3.5, f'{freq1}Hz  (amplitude{ampli1})', color='red', fontsize=11)
+ax1.text(0.5, -3, f'{freq2}Hz  (amplitude{ampli2})', color='green', fontsize=11)
 
 # 右图：频谱（频域）
 ax2.stem(freq_positive, mag_positive, basefmt=' ', linefmt='r-', markerfmt='ro')
 ax2.set_xlabel('frequency (Hz)')
-ax2.set_ylabel('magnitufr')
+ax2.set_ylabel('magnitude')
 ax2.set_title('After FFT  amplitude')
 ax2.grid(True, alpha=0.3)
 

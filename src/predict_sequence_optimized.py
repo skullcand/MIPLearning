@@ -316,7 +316,7 @@ def predict_with_candidates(model, digit_img, top_k=3):
     
     return candidates
 
-def predict_sequence_optimized(image_path, model_path='mnist_model.h5', 
+def predict_sequence_optimized(image_path, model_path='result\mnist_model.h5', 
                                threshold=0.7, visualize=False, top_k=3,
                                simple_split=False, num_digits=None):
     """
@@ -503,7 +503,7 @@ def visualize_digits(image_path, digits, details, threshold=0.7, output_path=Non
         import matplotlib.pyplot as plt
         
         if output_path is None:
-            output_path = f"segmented_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+            output_path = f"result\segmented_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
         
         num_digits = len(digits)
         
@@ -585,7 +585,7 @@ def main():
     )
     
     parser.add_argument('image_path', help='图片文件路径')
-    parser.add_argument('--model', default='mnist_model.h5', 
+    parser.add_argument('--model', default='result\mnist_model.h5', 
                        help='模型文件路径 (默认: mnist_model.h5)')
     parser.add_argument('--threshold', type=float, default=0.7,
                        help='置信度阈值 (0-1, 默认: 0.7)')

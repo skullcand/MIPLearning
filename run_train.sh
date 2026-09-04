@@ -27,7 +27,7 @@ pip install -r requirements.txt
 # 运行训练
 echo ""
 echo "🚀 开始训练..."
-python3 train.py
+python3 src/train.py
 
 echo ""
 echo "========================================"

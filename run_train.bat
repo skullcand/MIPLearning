@@ -30,7 +30,7 @@ pip install -r requirements.txt
 REM 运行训练
 echo.
 echo 🚀 开始训练...
-python train.py
+python src\train.py
 
 echo.
 echo ========================================
