@@ -1,0 +1,6 @@
+tensorflow-cpu
+numpy==1.26.4
+pillow>=8.0.0
+scipy>=1.7.0
+scikit-image>=0.18.0
+matplotlib>=3.3.0
